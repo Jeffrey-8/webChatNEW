@@ -28,7 +28,7 @@ public class User {
     private String login;
 
     @Column(name ="password")
-    private String password;
+    private String hashPassword;
 
     @Column(name = "firstName")
     private String firstName;
@@ -45,7 +45,7 @@ public class User {
     public static User from(UserForm userForm){
         return User.builder()
                 .login(userForm.getLogin())
-                .password(userForm.getPassword())
+                .hashPassword(userForm.getPassword())
                 .build();
     }
 }

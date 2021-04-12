@@ -7,6 +7,8 @@ import ru.fonin.mvc.forms.UserForm;
 import ru.fonin.mvc.models.User;
 import ru.fonin.mvc.repositories.UserRepository;
 
+import java.util.Optional;
+
 @Component
 public class LoginServiceImpl implements LoginService{
 
@@ -17,12 +19,12 @@ public class LoginServiceImpl implements LoginService{
 
     @Override
     public Boolean login(UserForm userForm) {
-        User user=userRepository.findByLogin(userForm.getLogin());
+        User user= userRepository.findByLogin(userForm.getLogin()).get();
         String newSTr=passwordEncoder.encode(userForm.getPassword());
-        String oldStr=user.getPassword();
+        String oldStr=user.getHashPassword();
         if (user!=null){
 
-            if (passwordEncoder.matches(passwordEncoder.encode(userForm.getPassword()), user.getPassword()))
+            if (passwordEncoder.matches(passwordEncoder.encode(userForm.getPassword()), user.getHashPassword()))
             return true;
         }
         return false;
