@@ -1,6 +1,7 @@
 package ru.fonin.mvc.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -9,36 +10,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import ru.fonin.mvc.forms.UserForm;
-import ru.fonin.mvc.services.LoginServiceImpl;
+//import ru.fonin.mvc.services.LoginServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
 
-    @Autowired
-    LoginServiceImpl loginService;
+//    @Autowired
+//    LoginServiceImpl loginService;
 
     @RequestMapping(path="/login", method = RequestMethod.GET)
-    public ModelAndView authorization(ModelMap modelMap, HttpServletRequest request){
+    public String getLoginPage(ModelAndView modelAndView,Authentication authentication, ModelMap modelMap, HttpServletRequest request)
+    {
+        if (authentication != null){
+            return "redirect:/";
+        }
 
-        ModelAndView modelAndView= new ModelAndView("auth");
         if (request.getParameterMap().containsKey("error")){
-            modelAndView.addObject("error",true);
+            modelMap.addAttribute("error",true);
         }
 
-        return modelAndView;
+        return "login";
     }
 
-    @PostMapping("/loginn")
-    public ModelAndView checkAuthorization( UserForm userForm){
-        ModelAndView modelAndView= new ModelAndView();
-        modelAndView.setViewName("auth");
-        if (loginService.login(userForm)){
-            modelAndView.addObject("error",false);
-            modelAndView.setViewName("hello");
-        }
-        modelAndView.addObject("error",true);
-        return modelAndView;
-    }
 }

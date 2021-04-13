@@ -25,7 +25,7 @@ public class RegistrationServiceImpl implements RegistrationService{
         User user = User.builder()
                 .firstName(userForm.getFirstName())
                 .lastName(userForm.getLastName())
-                .password(hashPassword)
+                .hashPassword(hashPassword)
                 .login(userForm.getLogin())
                 .role(Role.USER)
                 .state(State.ACTIVE)

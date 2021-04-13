@@ -42,7 +42,7 @@ public class UsersController {
 
 
 //    @RequestMapping(path="/auth", method = RequestMethod.POST)
-//    public ModelAndView authorization(){
+//    public ModelAndView getLoginPage(){
 //        ModelAndView modelAndView= new ModelAndView("auth");
 //        return modelAndView;
 //    }
