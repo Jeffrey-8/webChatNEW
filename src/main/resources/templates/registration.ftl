@@ -17,8 +17,8 @@
     <input class="input-field" type="text" id="login" name="login" value="roman2600"><br/>
     <label for="password">Password:</label><br/>
     <input class="input-field" type="password" id="password" name="password" value="12345"><br/>
-    <label for="password">Confirm password:</label><br/>
-    <input class="input-field" type="password" id="passwordConfirm" name="password" value="12345"><br/>
+<#--    <label for="password">Confirm password:</label><br/>-->
+<#--    <input class="input-field" type="password" id="passwordConfirm" name="password" value="12345"><br/>-->
 
     <label for="firstName">First name: </label><br/>
     <input class="input-field" type="text" id="firstName" name="firstName" value="Roman"><br/>

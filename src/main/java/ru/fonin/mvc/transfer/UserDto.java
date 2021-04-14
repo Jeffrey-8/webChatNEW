@@ -19,6 +19,4 @@ public class UserDto {
                 .lastName(user.getLastName())
                 .build();
     }
-
-
 }

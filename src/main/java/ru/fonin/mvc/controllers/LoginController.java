@@ -17,8 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController {
 
-//    @Autowired
-//    LoginServiceImpl loginService;
 
     @RequestMapping(path="/login", method = RequestMethod.GET)
     public String getLoginPage(ModelAndView modelAndView,Authentication authentication, ModelMap modelMap, HttpServletRequest request)

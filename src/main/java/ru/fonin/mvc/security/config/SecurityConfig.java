@@ -39,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                .formLogin()
                .loginPage("/login")
                .usernameParameter("login")
+               .passwordParameter("password")
                .defaultSuccessUrl("/")
                .permitAll();
 
@@ -47,6 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+        auth
+                .userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder);
+//        auth.inMemoryAuthentication().withUser("user").password("password").roles("SUPER", "BASIC");
     }
 }

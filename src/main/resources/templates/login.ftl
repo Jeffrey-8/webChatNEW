@@ -25,11 +25,10 @@
         </label>
         <br/>
         <label for="login">Password
-            <input class="input-field" type="password" id="hashPassword" name="password" value="12345">
+            <input class="input-field" type="password" id="password" name="password" value="12345">
         </label>
         <br/>
         <input name="submit" type="submit" value="Sign in">
-
     </form>
 </div>
 
