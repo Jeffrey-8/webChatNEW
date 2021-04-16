@@ -27,6 +27,10 @@
         <label for="login">Password
             <input class="input-field" type="password" id="password" name="password" value="12345">
         </label>
+        <label for="remember-me">Запомнить меня
+            <input type="checkbox" name="remember-me" id="remember-me">
+        </label>
+
         <br/>
         <input name="submit" type="submit" value="Sign in">
     </form>
