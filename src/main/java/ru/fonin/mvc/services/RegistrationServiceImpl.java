@@ -9,6 +9,7 @@ import ru.fonin.mvc.models.Role;
 import ru.fonin.mvc.models.State;
 import ru.fonin.mvc.models.User;
 import ru.fonin.mvc.repositories.UserRepository;
+//import ru.fonin.mvc.services.RegistrationService;
 
 @Service
 public class RegistrationServiceImpl implements RegistrationService{

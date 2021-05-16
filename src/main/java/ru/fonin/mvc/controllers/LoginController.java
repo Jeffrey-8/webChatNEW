@@ -21,13 +21,15 @@ public class LoginController {
     @RequestMapping(path="/login", method = RequestMethod.GET)
     public String getLoginPage(ModelAndView modelAndView,Authentication authentication, ModelMap modelMap, HttpServletRequest request)
     {
-        if (authentication != null){
-            return "redirect:/";
-        }
-
         if (request.getParameterMap().containsKey("error")){
             modelMap.addAttribute("error",true);
         }
+
+
+        if (authentication != null){
+            return "afterLogin";
+        }
+
 
         return "login";
     }

@@ -1,5 +1,6 @@
 package ru.fonin.mvc.forms;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
